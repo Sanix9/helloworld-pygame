@@ -19,7 +19,7 @@ class SplashScreen:
 
     def start(self):
         width = 800
-        height = 600
+        height = 800
         infoObject = pygame.display.Info()
         swidth, sheight = infoObject.current_w,infoObject.current_h
         
@@ -31,19 +31,19 @@ class SplashScreen:
         _font = pygame.font.SysFont('Times New Roman',27)
         #_font = pygame.freetype.SysFont('Arial', 20)
         
-        giiata_logo = pygame.image.load('./images/Logo-GIIATa.png')
+        giiata_logo = pygame.image.load('./images/logo-balon.gif')
         giiata_logo = pygame.transform.scale(giiata_logo, (180,160))
         
-        robot = pygame.image.load('./images/Blue-Robot.png')
+        robot = pygame.image.load('./images/balon.gif')
         robot = pygame.transform.scale(robot, (128, 128))
         
         screen = pygame.display.set_mode((width, height))
-        pygame.display.set_caption('Algoritmos de búsqueda - IA1')
+        pygame.display.set_caption('Jorge Sanisaca - Inteligencia Artificial')
 
         x = 0
         y = int((height/2)+(height/4))
-        points = np.arange(3,90,0.97)
-        fx_points = np.cos(points)
+        points = np.arange(6,90,0.97)
+        fx_points = np.sin(points)
         clock = pygame.time.Clock()
         
         rectc = pygame.Rect(0,height//2,width,height)
@@ -68,9 +68,9 @@ class SplashScreen:
 
             
             screen.fill((255,255,255))
-            self.ut.drawText(screen, 'Grupo de Investigación en Inteligencia Artificial y Tecnologías de Asistencia', (10,10,200), ((width/2)-100, 10, 500, 50), _font)
+            self.ut.drawText(screen, 'Asignatura de Inteligencia Artificial', (10,10,200), ((width/2)-100, 10, 500, 50), _font)
 
-            self.ut.drawText(screen, 'Inteligencia Artificial 1 - Algoritmos de búsqueda', (100,10,200), ((width/2)-100, 73, 500, 100), _font)
+            self.ut.drawText(screen, 'Jorge Sanisaca', (100,100,250), ((width/2)-100, 73, 500, 100), _font)
             
             screen.blit(giiata_logo,(10,10))
             
